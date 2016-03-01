@@ -58,7 +58,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
 	public void uncaughtException(Thread thread, final Throwable ex) {
 		
 		if(!handleException(ex) && mDefaultHandler != null) {
-			//自定义异常处理器为处理，则让系统默认的异常处理器来处理  
+			//自定义异常处理器未处理，则让系统默认的异常处理器来处理  
 			mDefaultHandler.uncaughtException(thread, ex);
 		} else {
 			//等待3秒钟退出
